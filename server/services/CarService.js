@@ -7,7 +7,7 @@ const _model = new Schema({
   imgUrl: { type: String, default: 'https://placehold.it/200x200' },
   price: { type: Number, required: true },
   year: { type: Number, required: true },
-  description: { type: String, required: true }
+  description: { type: String, }
 }, { timestamps: true })
 
 export default class CarService {
