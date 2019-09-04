@@ -34,4 +34,34 @@ export default class CarController {
       next(error)
     }
   }
+
+  async create(req, res, next) {
+    try {
+      let car = await _carService.create(req.body)
+      res.send(car)
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  async edit(req, res, next) {
+    try {
+      let car = await _carService.findOneAndUpdate({ _id: req.params.id, }, req.body, { new: true })
+      if (car) {
+        return res.send(car)
+      }
+      throw new Error("invalid id")
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  async delete(req, res, next) {
+    try {
+      await _carService.findOneAndRemove({ _id: req.params.id })
+      res.send("deleted value")
+    } catch (error) {
+      next(error)
+    }
+  }
 }
