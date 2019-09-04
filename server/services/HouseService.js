@@ -9,7 +9,7 @@ const _model = new Schema({
   bedrooms: { type: Number, required: true },
   bathrooms: { type: Number, required: true },
   description: { type: String, required: true }
-} { timestamps: true })
+}, { timestamps: true })
 
 export default class HouseService {
   get repository() {
