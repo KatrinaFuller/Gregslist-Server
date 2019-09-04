@@ -12,6 +12,6 @@ const _model = new Schema({
 
 export default class CarService {
   get repository() {
-    return mongoose.model('value', _model)
+    return mongoose.model('car', _model)
   }
 }
